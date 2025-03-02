@@ -17,8 +17,9 @@
 
         body {
             font-family: 'EB Garamond', serif;
-            background-color: #E1D9C6;
+            background-color: #000000; /* Initial black background */
             overflow-x: hidden;
+            transition: background-color 0.5s ease; /* Smooth transition for background */
         }
 
         .hero {
@@ -31,13 +32,13 @@
             text-align: center;
             background: url('Cover.jpg') no-repeat center center/cover;
             color: #5B6e74;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 2s ease-in-out 1s forwards; /* Delayed fade-in with 1s delay */
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            0% { opacity: 0; background-color: #000000; }
+            100% { opacity: 1; background-color: transparent; }
         }
 
         h1 {

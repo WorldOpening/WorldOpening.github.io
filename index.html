@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Babylon Global Investment Partners - Global special situations investors. New York and Hong Kong.">
+    <meta name="keywords" content="investment, special situations, global investors, Babylon Global">
+    <meta name="author" content="Babylon Global Investment Partners">
+    <title>Babylon Global Investment Partners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #E7E9ED;
+            --muted: #6E757B;
+            --gold: #BBA37D;
+            --rule: rgba(187, 163, 125, 0.45);
+        }
+
+        html, body { height: 100%; }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: radial-gradient(ellipse at 50% 40%, #0c0e12 0%, #050608 55%, #000000 100%);
+            background-attachment: fixed;
+            color: var(--ink);
+            overflow-x: hidden;          /* allow vertical scroll as a fallback; never clip */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Grid reserves a row for the footer, so the centered block and the
+           contact line can never overlap, even on short, wide windows. */
+        .hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: grid;
+            grid-template-rows: 1fr auto;
+            justify-items: center;
+            row-gap: clamp(2rem, 6vh, 4rem);
+            text-align: center;
+            padding: clamp(2.5rem, 6vh, 4rem) 1.5rem clamp(2rem, 5vh, 3.4rem);
+        }
+
+        .main {
+            grid-row: 1;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ---- Seal: wedge tower ---- */
+        .emblem {
+            width: clamp(54px, 8vw, 78px);
+            margin-bottom: clamp(1.6rem, 4vw, 2.4rem);
+            opacity: 0;
+            transform: scale(0.94);
+            animation: sealIn 1.8s cubic-bezier(.2,.7,.2,1) 0.3s forwards;
+        }
+        .emblem svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            animation: breath 9s ease-in-out 2.4s infinite;
+        }
+        @keyframes sealIn { to { opacity: 1; transform: scale(1); } }
+        @keyframes breath {
+            0%, 100% { filter: drop-shadow(0 0 4px rgba(187,163,125,0.14)); }
+            50%      { filter: drop-shadow(0 0 11px rgba(187,163,125,0.40)); }
+        }
+
+        /* ---- Wordmark ---- */
+        h1 {
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.16;
+            letter-spacing: 0.2em;
+            font-size: clamp(1.65rem, 4.4vw, 3.5rem);
+            max-width: 13ch;
+            opacity: 0;
+            transform: translateY(6px);
+            animation: rise 1.6s ease-out 0.9s forwards;
+        }
+        h1 .word { display: inline-block; }
+
+        .rule {
+            width: 56px;
+            height: 1px;
+            background: var(--rule);
+            margin: clamp(1.5rem, 3.4vw, 2.4rem) auto;
+            opacity: 0;
+            transform: scaleX(0.3);
+            animation: ruleIn 1.4s ease-out 1.5s forwards;
+        }
+
+        .tagline {
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.36em;
+            font-size: clamp(0.62rem, 1.35vw, 0.84rem);
+            padding-left: 0.36em;
+            opacity: 0;
+            animation: rise 1.6s ease-out 1.7s forwards;
+        }
+
+        /* ---- Footer (own grid row, no absolute positioning) ---- */
+        .details {
+            grid-row: 2;
+            align-self: end;
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            color: var(--muted);
+            letter-spacing: 0.2em;
+            font-size: clamp(0.64rem, 1.25vw, 0.8rem);
+            line-height: 2.1;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: rise 1.6s ease-out 2.1s forwards;
+        }
+        .details .sep { color: var(--gold); margin: 0 0.5em; opacity: 0.8; }
+        .details a {
+            color: var(--muted);
+            text-transform: none;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.4s ease, border-color 0.4s ease;
+        }
+        .details a:hover,
+        .details a:focus-visible { color: var(--ink); border-bottom-color: var(--rule); }
+        .details a:focus-visible { outline: 1px solid var(--rule); outline-offset: 4px; }
+
+        @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+        @keyframes ruleIn { to { opacity: 1; transform: scaleX(1); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .emblem, .emblem svg, h1, .rule, .tagline, .details {
+                opacity: 1; transform: none; animation: none; filter: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="main">
+            <div class="emblem" aria-hidden="true">
+                <svg viewBox="0 0 96 96" fill="none">
+                    <circle cx="48" cy="48" r="37" stroke-width="1" stroke="var(--gold)"/>
+                    <circle cx="48" cy="48" r="33" stroke-width="0.5" stroke="var(--gold)" opacity="0.55"/>
+                    <!-- Cuneiform wedges stacked into a tower -->
+                    <path d="M45 30 L51 30 L48 44 Z" fill="var(--gold)" opacity="0.78"/>
+                    <path d="M39 43 L45 43 L42 57 Z" fill="var(--gold)" opacity="0.9"/>
+                    <path d="M51 43 L57 43 L54 57 Z" fill="var(--gold)" opacity="0.9"/>
+                    <path d="M33 56 L39 56 L36 70 Z" fill="var(--gold)"/>
+                    <path d="M45 56 L51 56 L48 70 Z" fill="var(--gold)"/>
+                    <path d="M57 56 L63 56 L60 70 Z" fill="var(--gold)"/>
+                </svg>
+            </div>
+
+            <h1>
+                <span class="word">Babylon</span>
+                <span class="word">Global</span>
+                <span class="word">Investment</span>
+                <span class="word">Partners</span>
+            </h1>
+
+            <div class="rule"></div>
+            <p class="tagline">Global Special Situations Investors</p>
+        </div>
+
+        <div class="details">
+            New York <span class="sep">|</span> Hong Kong<br>
+            <a href="mailto:diwik@babylon-global.com">diwik@babylon-global.com</a>
+        </div>
+    </section>
+</body>
+</html>
